@@ -251,7 +251,7 @@
     "orientation": "inherit",
     "modules": [
         "custom/hyprpicker",
-        "bluetooth",
+        /* "bluetooth", */
         "network",
         "pulseaudio",
         "backlight",
