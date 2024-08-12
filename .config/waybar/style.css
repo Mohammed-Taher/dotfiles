@@ -1,106 +1,171 @@
-@import "mocha.css";
+/*
+┌──────────────────────────────────┐
+│                                  │
+│     ░█░█░█▀█░█░█░█▀▄░█▀█░█▀▄     │
+│     ░█▄█░█▀█░░█░░█▀▄░█▀█░█▀▄     │
+│     ░▀░▀░▀░▀░░▀░░▀▀░░▀░▀░▀░▀     │
+│                                  │
+└──────────────────────────────────┘
+*/
 
+@import "axgruv.css";
 * {
-  /*font-family: JetBrainsMono NF;*/
-  /*font-family: SF Pro Display;*/
-  font-family: SF Pro Rounded;
-  /*font-family: FantasqueSansMono Nerd Font;*/
-  font-size: 13px;
-  min-height: 5px;
-  font-weight: 700;
+	border: none;
+	border-radius: 0px;
+	font-family: 'Iosevka Nerd Font';
+	font-size: 12pt;
+	font-style: normal;
+	min-height: 0px;
 }
 
-#waybar {
-  background: rgba(0,0,0,0.2);
-  /*background: @surface0;*/
-  color: @text;
-  margin: 5px 5px;
+window#waybar {
+	background: transparent;
+	/* border: 2px solid @brblack; */
+	/* border-radius: 10px; */
+	/* color: @white; */
 }
 
 #workspaces {
-  margin: 5px;
-  margin-left: 1rem;
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 3px;
-  font-family: SF Pro Rounded;
-  font-weight: 700;
+  background: @black;
+  border-radius: 5px;
+  padding: 5px 8px;
+  margin: 10px;
+  box-shadow: 0px 0px 3px rgba(0,0,0,1);
+  border: 1px solid @brblack;
 }
 
 #workspaces button {
-  padding: 1px 5px 1px 5px;
-  border-radius: 3px;
+	border-radius: 0px;
+	color: @white;
+	/* transition: all 0.25s ease-in-out; */
+}
+
+#workspaces button.persistent {
+	color: @forground;
+}
+
+#workspaces button.empty {
+    color: @brblack;
 }
 
 #workspaces button.active {
-  padding: 1px 9px 1px 9px;
-  background: rgba(255, 255, 255, 0.7);
-  color: @text;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    transition: all 0.3s ease-out;
-}
-
-#workspaces button.visible {
-  padding: 1px 9px 1px 9px;
-  color: black;
-    transition: all 0.3s ease-out;
+  color: @brgreen;
+  text-shadow:
+    0.25px 0.25px 0 @brgreen,
+    -0.25px 0.25px 0 @brgreen,
+    -0.25px -0.25px 0 @brgreen,
+    0.25px -0.25px 0 @brgreen;
 }
 
 #workspaces button:hover {
-  color: @sapphire;
+	background-color: @brblack;
+	color: @brgreen;
 }
 
-#custom-music,
-#tray,
-#backlight,
-#clock,
-#battery,
-#pulseaudio,
-#custom-lock,
-#network,
-#group-power,
-#custom-quit,
-#custom-lock,
-#custom-reboot,
-#custom-power,
-#drawer-child,
-#language {
-    color: @white;
-    padding: 6px;
+#tray {
+	padding: 5px 10px;
+	margin: 10px 5px;
+  background: @black;
+  border-radius: 10px;
+  box-shadow: 0px 0px 3px rgba(0,0,0,1);
+  border: 1px solid @brblack;
 }
 
-#network {
-  margin-right: 9px;
+#clock {
+	color: @green;
+  background: @black;
+  border-radius: 10px;
+	padding: 5px 14px;
+	margin: 10px 10px 10px 0px;
+	font-weight: bold;
+  box-shadow: 0px 0px 3px rgba(0,0,0,1);
+  border: 1px solid @brblack;
 }
 
 #custom-launcher {
-  padding-left: 15px;
-  font-size: 20px;
-  color: white;
+	color: @white;
+	background: @black;
+  border-radius: 10px;
+	font-family: 'Symbols Nerd Font';
+	font-size: 20px;
+	padding: 8px 11px 8px 11px;
+  margin: 10px 0px 10px 10px;
+  box-shadow: 0px 0px 3px rgba(0,0,0,1);
+  border: 1px solid @brblack;
 }
 
+#custom-playerctl {
+	font-weight: bold;
+  /* font-style: italic; */
+  background: @black;
+  color: @white;
+  padding: 5px 14px;
+  margin: 10px 5px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 3px rgba(0,0,0,1);
+  border: 1px solid @brblack;
+}
+
+#cpu, #memory, #disk, #custom-gpu-usage {
+	background-color: #000000;
+	border-radius: 16px;
+	margin: 5px;
+	padding: 0px 10px;
+	font-weight: bold;
+	border: solid 2px @brblack;
+	box-shadow: 0px 0px 3px rgba(0,0,0,1);
+	text-shadow: 0px 0px 3px @white;
+  border: 1px solid @brblack;
+}
+
+#custom-randwall, #custom-hyprpicker, #bluetooth, #network, #pulseaudio, #backlight, #battery, #custom-notifications, #language {
+	color: @white;
+	/* font-family: 'Symbols Nerd Font'; */
+	font-family: 'feather';
+	font-size: 12pt;
+	margin: 0;
+	padding: 0px 10px;
+}
+
+#pulseaudio {
+  color: @white;
+  font-size: 15pt;
+}
+
+/* #custom-hyprpicker { */
+/*   background: linear-gradient(to left, transparent, @color1); */
+/*   border-radius: 100px 0 0 100px; */
+/*   border-top: solid 3px transparent; */
+/*   border-bottom: solid 3px transparent; */
+/*   padding-left: 15px; */
+/* } */
+
+#bluetooth.connected {
+	color: @brgreen;
+}
+
+#bluetooth.off {
+	color: @brblack;
+}
+
+#pulseaudio.muted {
+	color: @brblack;
+}
 
 #battery.charging {
-  color: @green;
+	color: @brgreen;
 }
 
 #battery.warning:not(.charging) {
-  color: @red;
+	color: @red;
 }
 
-#backlight {
-  color: @yellow;
+#group-applets {
+  background: @black;
+  border-radius: 10px;
+  padding: 5px 8px;
+  margin: 10px 10px 10px 5px;
+  box-shadow: 0px 0px 3px rgba(0,0,0,1);
+  border: 1px solid @brblack;
+    font-size: 14px;
 }
-
-
-
-#custom-music {
-  border-radius: 1rem;
-}
-
-
-
-#tray {
-  margin-right: 1rem;
-  border-radius: 1rem;
-}
-

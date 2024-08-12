@@ -22,10 +22,10 @@
 		"format": "{:%H:%M:%OS}",
     "timezone": "Asia/Baghdad",
     "interval": 1,
-		"tooltip": "false",
+		"tooltip": false,
 //        	"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        	"format-alt": "{:%d/%m/%Y}",
-    "on-click-right": "bash ~/.config/rofi/calendar/calendar.sh",
+    "format-alt": "{:%d/%m/%Y}",
+    "on-click-right": "bash ~/.config/rofi/calendar/calendar.sh"
 	},
 	
 
@@ -46,10 +46,11 @@
 			"active": "",
 			"default": "󰧞",
     "sort-by-number": true
-    },
+    }
     },
 
 "hyprland/workspaces": {
+  "format": "<sub>{icon}</sub>\n{windows}",
   "disable-scroll": false,
   "on-scroll-up": "hyprctl dispatch workspace -1",
   "on-scroll-down": "hyprctl dispatch workspace +1",
@@ -72,6 +73,11 @@
              "*": 3
        }
 },
+  "hyprland/language": {
+    "format": "{}",
+    "format-en": "<span font='Iosevka NF' font-weight='bold'>En</span>",
+    "format-ar": "<span font='Iosevka NF' font-weight='bold'>Ar</span>"
+  },
 
     "custom/playerctl": {
       "format": "{icon}   ::  <span>{}</span>",
@@ -98,7 +104,7 @@
       "format-icons": {
         "Playing": "<span foreground='#B1B946'>󰒮 󰐌  󰒭</span>",
         "Paused": "<span foreground='#47423E'>󰒮 󰏥  󰒭</span>"
-      },
+      }
     },
 
 	"battery": {
@@ -107,15 +113,18 @@
             "warning": 30,
             "critical": 15
         },
-        "format":"{icon}",
-        "format-charging": "󰂄",
-        "format-plugged": "󱐋",
-        "format-alt": "{icon} <span font='Iosevka NF'>{capacity}% | {time}</span>",
+        //"format":"{capacity}% {icon}",
+        "format": "{icon} <span font-family='Iosevka NF' font-size='12pt'>{capacity}%</span>",
+        "format-charging": " <span font-family='Iosevka NF' font-size='12pt'>{capacity}%</span>",
+        //"format-plugged": "󱐋",
+        "format-plugged": "<span font-family='Iosevka NF' font-size='12pt'>{capacity}%</span>",
+        "format-alt": "{icon} {capacity}% | {time}",
         // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
-        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        //"format-full": "",
+        "format-icons": [""],
+        //"format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
         "interval": 1,
-        "tooltip-format": "{capacity}% - {time}",
+        "tooltip-format": "{capacity}% - {time}"
 	},
 
   "memory": {
@@ -152,13 +161,10 @@
   },
 
 	"network": {
-        	"format-wifi": "󰤨",
-        	"format-ethernet": " {ifname}",
-        	"format-linked": " {ifname} (No IP)",
-        	"format-disconnected": "󰤭",
-        	"format-alt": " {ifname}: {ipaddr}/{cidr}",
+        	"format-wifi": "",
+        	"format-disconnected": "",
           "tooltip-format": "{essid}",
-          "on-click-right": "python ~/.config/rofi/network/network.py",
+          "on-click": "ronema"
 	},
 
   "bluetooth": {
@@ -179,14 +185,14 @@
     "tooltip": false,
     "format": "{icon}",
     "format-icons": {
-      "notification": "󰂚<span foreground='#DB4740'><sup></sup></span>",
-      "none": "󰂚",
-      "dnd-notification": "󰂛<span foreground='#DB4740'><sup></sup></span>",
-      "dnd-none": "󰂛",
-      "inhibited-notification": "󰂚<span foreground='#DB4740'><sup></sup></span>",
-      "inhibited-none": "󰂚",
+      "notification": "<span foreground='#DB4740'><sup></sup></span>",
+      "none": "",
+      "dnd-notification": "<span foreground='#DB4740'><sup></sup></span>",
+      "dnd-none": "",
+      "inhibited-notification": "<span foreground='#DB4740'><sup></sup></span>",
+      "inhibited-none": "",
       "dnd-inhibited-notification": "󰂛<span foreground='#DB4740'><sup></sup></span>",
-      "dnd-inhibited-none": "󰂛"
+      "dnd-inhibited-none": ""
     },
     "return-type": "json",
     "exec-if": "which swaync-client",
@@ -210,24 +216,22 @@
   "tooltip-format": "{percent}%"
 	},
 
+
 	"pulseaudio": {
-		"format": "{icon}",
-        	"format-muted": "󰝟",
+    "format": "{icon}",
+		// "format": "{icon}",
+    "format-muted": "",
 		"format-icons": {
-			"default": ["󰕿", "󰖀", "󰕾"]
+		"default": ["", "", "" ]
+		// "default": ["󰖁", "󰕿", "󰖀", "󰕾" ]
 		},
 		"on-click": "pamixer -t",
 		"on-click-right": "bash ~/.config/rofi/applets/bin/volume.sh --row 3",
     "tooltip-format": "{volume}%"
   },
-  "custom/randwall": {
-    "format": "󰏘",
-    "on-click": "nemo ~/Wallpapers/Selected",
-    "on-click-right": "nemo ~/Wallpapers"
-  },
   "custom/launcher": {
     "format": "",
-    "on-click": "rofi -show drun",
+    "on-click": "~/.config/rofi/launcher/launcher.sh",
     "on-click-right": "~/.config/scripts/blur_wlogout/blur_wlogout.sh"
   },
 
@@ -235,16 +239,19 @@
 		"format": "{}",
 		"interval": "once",
 		"exec": "echo ''",
-		"tooltip": "false",
+		"tooltip": false,
 		"exec-if": "pgrep 'wf-recorder'",
 		"on-click": "exec ./scripts/wlrecord.sh",
 		"signal": 8
 	},
 
   "custom/hyprpicker": {
-    "format": "󰈋",
+    "format": " ",
     "on-click": "bash ~/.config/waybar/scripts/hyprpicker-hex.sh",
-    "on-click-right": "bash ~/.config/waybar/scripts/hyprpicker-rgb.sh"
+    "on-click-right": "bash ~/.config/waybar/scripts/hyprpicker-rgb.sh",
+    "tooltip": true,
+    "tooltip-format": "Colorpicker"
+
   },
 
   "group/group-applets": {
@@ -255,8 +262,9 @@
         "network",
         "pulseaudio",
         "backlight",
-        "battery",
-        "custom/notifications"
+        "hyprland/language",
+        "custom/notifications",
+        "battery"
     ]
 }
   }

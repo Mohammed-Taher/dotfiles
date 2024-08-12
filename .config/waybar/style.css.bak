@@ -1,0 +1,106 @@
+@import "mocha.css";
+
+* {
+  /*font-family: JetBrainsMono NF;*/
+  /*font-family: SF Pro Display;*/
+  font-family: SF Pro Rounded;
+  /*font-family: FantasqueSansMono Nerd Font;*/
+  font-size: 13px;
+  min-height: 5px;
+  font-weight: 700;
+}
+
+#waybar {
+  background: rgba(0,0,0,0.2);
+  /*background: @surface0;*/
+  color: @text;
+  margin: 5px 5px;
+}
+
+#workspaces {
+  margin: 5px;
+  margin-left: 1rem;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+  font-family: SF Pro Rounded;
+  font-weight: 700;
+}
+
+#workspaces button {
+  padding: 1px 5px 1px 5px;
+  border-radius: 3px;
+}
+
+#workspaces button.active {
+  padding: 1px 9px 1px 9px;
+  background: rgba(255, 255, 255, 0.7);
+  color: @text;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    transition: all 0.3s ease-out;
+}
+
+#workspaces button.visible {
+  padding: 1px 9px 1px 9px;
+  color: black;
+    transition: all 0.3s ease-out;
+}
+
+#workspaces button:hover {
+  color: @sapphire;
+}
+
+#custom-music,
+#tray,
+#backlight,
+#clock,
+#battery,
+#pulseaudio,
+#custom-lock,
+#network,
+#group-power,
+#custom-quit,
+#custom-lock,
+#custom-reboot,
+#custom-power,
+#drawer-child,
+#language {
+    color: @white;
+    padding: 6px;
+}
+
+#network {
+  margin-right: 9px;
+}
+
+#custom-launcher {
+  padding-left: 15px;
+  font-size: 20px;
+  color: white;
+}
+
+
+#battery.charging {
+  color: @green;
+}
+
+#battery.warning:not(.charging) {
+  color: @red;
+}
+
+#backlight {
+  color: @yellow;
+}
+
+
+
+#custom-music {
+  border-radius: 1rem;
+}
+
+
+
+#tray {
+  margin-right: 1rem;
+  border-radius: 1rem;
+}
+

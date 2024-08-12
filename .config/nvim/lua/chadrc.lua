@@ -5,9 +5,12 @@
 local M = {}
 
 M.ui = {
-	theme = "catppuccin",
+	theme = "gruvchad",
   telescope = { style = 'bordered'},
-  statusline = { theme = "vscode_colored"},
+  statusline = { 
+    order = {"mode", "file", "git", "%=", "lsp_msg", "%=", "diagnostics", "lsp", "cursor", "cwd"},
+    theme = "vscode_colored",
+  },
 
 	hl_override = {
 		Comment = { italic = true },
