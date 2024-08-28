@@ -5,7 +5,8 @@
 local M = {}
 
 M.ui = {
-	theme = "gruvchad",
+	theme = "tokyonight",
+  transparency = true,
   telescope = { style = 'bordered'},
   statusline = { 
     order = {"mode", "file", "git", "%=", "lsp_msg", "%=", "diagnostics", "lsp", "cursor", "cwd"},
