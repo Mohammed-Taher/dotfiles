@@ -4,11 +4,11 @@
 #!/bin/env bash
  
 # Options for powermenu
-lock=""
-logout=""
+lock="󰌾"
+logout="󰍃"
 shutdown=""
-reboot=" "
-sleep=""
+reboot="󰜉"
+sleep="󰤄"
  
 # Get answer from user via rofi
 selected_option=$(echo "$lock

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Read the wallpaper file path
-BG=~/Pictures/.current_wallpaper/wall.jpg
+BG=~/Pictures/wall1.jpg
 
 
 # Apply the wallpaper to all monitors
@@ -10,7 +10,7 @@ BG=~/Pictures/.current_wallpaper/wall.jpg
 #   swww kill
 # fi
 
-# swww-daemon --format xrgb
+swww-daemon --format xrgb
 
 sleep 0.1
 swww img "$BG" --transition-bezier 0.0,0.0,1.0,1.0 --transition-duration .8 --transition-step 255 --transition-fps 60
